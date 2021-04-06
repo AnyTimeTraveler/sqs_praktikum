@@ -1,3 +1,5 @@
+package de.hsemden.sqsprak;
+
 public enum TriangleType {
 	NO_TRIANGLE,
 	SCALENE_TRIANGLE, // ungleichseitig
