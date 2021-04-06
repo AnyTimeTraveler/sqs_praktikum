@@ -7,10 +7,16 @@ public class Tests {
   @Test // gleichseitig
   public void own_equilateralTest() {
     assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleCheckerOwn.checkTriangle(1, 1, 1));
-    assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleCheckerOwn.checkTriangle(894456684, 894456684, 894456684));
-    assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleCheckerOwn.checkTriangle(378710059, 378710059, 378710059));
-    assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleCheckerOwn.checkTriangle(594244357, 594244357, 594244357));
-    assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleCheckerOwn.checkTriangle(25880563, 25880563, 25880563));
+    assertEquals(TriangleType.EQUILATERAL_TRIANGLE,
+        TriangleCheckerOwn.checkTriangle(894456684, 894456684, 894456684));
+    assertEquals(TriangleType.EQUILATERAL_TRIANGLE,
+        TriangleCheckerOwn.checkTriangle(378710059, 378710059, 378710059));
+    assertEquals(TriangleType.EQUILATERAL_TRIANGLE,
+        TriangleCheckerOwn.checkTriangle(594244357, 594244357, 594244357));
+    assertEquals(TriangleType.EQUILATERAL_TRIANGLE,
+        TriangleCheckerOwn.checkTriangle(25880563, 25880563, 25880563));
+    assertEquals(TriangleType.EQUILATERAL_TRIANGLE,
+        TriangleChecker.checkTriangle(2147483647, 2147483647, 2147483647));
   }
 
   @Test // ungleichseitig
@@ -33,18 +39,23 @@ public class Tests {
   public void own_noTriangleTestOwn() {
     assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(-2, 4, 2));
     assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(1, 2, 3));
-    assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(2147483647, 2147483647, 2147483647));
     assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(0, 0, 2));
     assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(2, 4, 2));
   }
 
-  @Test
+  @Test //gleichseitig
   public void streek_cequilateralTest() {
     assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleChecker.checkTriangle(1, 1, 1));
-    assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleChecker.checkTriangle(894456684, 894456684, 894456684));
-    assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleChecker.checkTriangle(378710059, 378710059, 378710059));
-    assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleChecker.checkTriangle(594244357, 594244357, 594244357));
-    assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleChecker.checkTriangle(25880563, 25880563, 25880563));
+    assertEquals(TriangleType.EQUILATERAL_TRIANGLE,
+        TriangleChecker.checkTriangle(894456684, 894456684, 894456684));
+    assertEquals(TriangleType.EQUILATERAL_TRIANGLE,
+        TriangleChecker.checkTriangle(378710059, 378710059, 378710059));
+    assertEquals(TriangleType.EQUILATERAL_TRIANGLE,
+        TriangleChecker.checkTriangle(594244357, 594244357, 594244357));
+    assertEquals(TriangleType.EQUILATERAL_TRIANGLE,
+        TriangleChecker.checkTriangle(25880563, 25880563, 25880563));
+    assertEquals(TriangleType.EQUILATERAL_TRIANGLE,
+        TriangleChecker.checkTriangle(2147483647, 2147483647, 2147483647));
   }
 
   @Test // ungleichseitig
@@ -67,8 +78,9 @@ public class Tests {
   public void streek_noTriangleTest() {
     assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(-2, 4, 2));
     assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(1, 2, 3));
-    assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(2147483647, 2147483647, 2147483647));
+//
+    assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 2, 2));
     assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 0, 2));
-    assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(2, 4, 2));
+    assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 0, 0));
   }
 }

@@ -17,7 +17,7 @@ public class TriangleCheckerOwn {
       b = numbers.get(1);
       c = numbers.get(2);
 
-      if (a + b > c) {
+      if ((long) a + (long) b > (long) c) {
         if (a == b && b == c) {
           return TriangleType.EQUILATERAL_TRIANGLE; // gleichseitig
         } else if (a == b) {
