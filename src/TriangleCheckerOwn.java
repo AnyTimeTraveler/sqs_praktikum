@@ -1,5 +1,3 @@
-package de.hsemden.sqsprak;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
