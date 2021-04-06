@@ -3,7 +3,7 @@ package de.hsemden.sqsprak;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class TriangleChecker {
+public class TriangleCheckerOwn {
 
   public static TriangleType checkTriangle(int a, int b, int c) {
     if (a > 0 && b > 0 && c > 0) {
