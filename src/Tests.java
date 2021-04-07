@@ -78,7 +78,6 @@ public class Tests {
   public void streek_noTriangleTest() {
     assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(-2, 4, 2));
     assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(1, 2, 3));
-//
     assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 2, 2));
     assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 0, 2));
     assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 0, 0));
