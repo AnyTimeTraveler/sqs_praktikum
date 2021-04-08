@@ -11,6 +11,8 @@ public class TriangleCheckerOwn {
       numbers.add(b);
       numbers.add(c);
 
+      System.out.printf("TEst");
+
       Collections.sort(numbers);
 
       a = numbers.get(0);
