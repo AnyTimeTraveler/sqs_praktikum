@@ -8,7 +8,7 @@ public class TriangleCheckerOwn {
     if (a > 0 && b > 0 && c > 0) {
 
       //used to sort a,b,c
-      ArrayList<Integer> numbers = new ArrayList<>();
+      ArrayList<Integer> numbers = new ArrayList<>(3);
       numbers.add(a);
       numbers.add(b);
       numbers.add(c);
