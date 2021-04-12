@@ -4,21 +4,23 @@ import java.util.Collections;
 public class TriangleCheckerOwn {
 
   public static TriangleType checkTriangle(int a, int b, int c) {
+    //
     if (a > 0 && b > 0 && c > 0) {
 
+      //used to sort a,b,c
       ArrayList<Integer> numbers = new ArrayList<>();
       numbers.add(a);
       numbers.add(b);
       numbers.add(c);
 
-      System.out.printf("TEst");
-
       Collections.sort(numbers);
 
+      //a<=b<=c
       a = numbers.get(0);
       b = numbers.get(1);
       c = numbers.get(2);
 
+      //a+b>c even if a+b > max Integer
       if ((long) a + (long) b > (long) c) {
         if (a == b && b == c) {
           return TriangleType.EQUILATERAL_TRIANGLE; // gleichseitig
