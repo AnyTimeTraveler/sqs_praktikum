@@ -4,7 +4,7 @@ import java.util.Collections;
 public class TriangleCheckerOwn {
 
   public static TriangleType checkTriangle(int a, int b, int c) {
-    //
+    //prevent numbers <= 0
     if (a > 0 && b > 0 && c > 0) {
 
       //used to sort a,b,c
