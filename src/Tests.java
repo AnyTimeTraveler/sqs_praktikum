@@ -41,6 +41,9 @@ public class Tests {
     assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(1, 2, 3));
     assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(0, 0, 2));
     assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(2, 4, 2));
+    assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(0, 0, 0));
+    assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(0, 2, 0));
+    assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(2, 0, 0));
   }
 
   @Test //gleichseitig
@@ -74,12 +77,39 @@ public class Tests {
     assertEquals(TriangleType.ISOSCELES_TRIANGLE, TriangleChecker.checkTriangle(3, 4, 3));
   }
 
+  //split up for easy checking
   @Test
-  public void streek_noTriangleTest() {
+  public void streek_noTriangleTestNegativNumber() {
     assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(-2, 4, 2));
+  }
+
+  @Test
+  public void streek_noTriangleTestABCEqual() {
     assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(1, 2, 3));
+  }
+
+  @Test
+  public void streek_noTriangleTestFirstZero() {
     assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 2, 2));
+  }
+
+  @Test
+  public void streek_noTriangleTestFirstTwoZero() {
     assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 0, 2));
+  }
+
+  @Test
+  public void streek_noTriangleTestAllZero() {
     assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 0, 0));
+  }
+
+  @Test
+  public void streek_noTriangleTestFirstLastZero() {
+    assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 2, 0));
+  }
+
+  @Test
+  public void streek_noTriangleTestLastTwoZero() {
+    assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(2, 0, 0));
   }
 }
