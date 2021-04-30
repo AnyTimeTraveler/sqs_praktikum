@@ -3,6 +3,7 @@ import java.util.Collections;
 
 public class TriangleCheckerOwn {
 
+
     public static TriangleType checkTriangle(int a, int b, int c) {
         //used to sort a,b,c
         ArrayList<Integer> numbers = new ArrayList<>(3);

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Tests.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sqs_praktikum$Tests.exec</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Tests.java</span></div><h1>Tests.java</h1><pre class="source lang-java linenums">import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+<span class="nc" id="L5">public class Tests {</span>
+
+    @Test // gleichseitig
+    public void own_equilateralTest() {
+<span class="nc" id="L9">        assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleCheckerOwn.checkTriangle(1, 1, 1));</span>
+<span class="nc" id="L10">        assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleCheckerOwn.checkTriangle(894456684, 894456684, 894456684));</span>
+<span class="nc" id="L11">        assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleCheckerOwn.checkTriangle(378710059, 378710059, 378710059));</span>
+<span class="nc" id="L12">        assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleCheckerOwn.checkTriangle(594244357, 594244357, 594244357));</span>
+<span class="nc" id="L13">        assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleCheckerOwn.checkTriangle(25880563, 25880563, 25880563));</span>
+<span class="nc" id="L14">        assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleCheckerOwn.checkTriangle(2147483647, 2147483647, 2147483647));</span>
+<span class="nc" id="L15">    }</span>
+
+    @Test // ungleichseitig
+    public void own_scaleneTestOwn() {
+<span class="nc" id="L19">        assertEquals(TriangleType.SCALENE_TRIANGLE, TriangleCheckerOwn.checkTriangle(4, 7, 5));</span>
+<span class="nc" id="L20">        assertEquals(TriangleType.SCALENE_TRIANGLE, TriangleCheckerOwn.checkTriangle(8, 4, 7));</span>
+<span class="nc" id="L21">        assertEquals(TriangleType.SCALENE_TRIANGLE, TriangleCheckerOwn.checkTriangle(2, 6, 7));</span>
+<span class="nc" id="L22">    }</span>
+
+    @Test // gleichschenklig
+    public void own_isocleseTestOwn() {
+<span class="nc" id="L26">        assertEquals(TriangleType.ISOSCELES_TRIANGLE, TriangleCheckerOwn.checkTriangle(2, 2, 3));</span>
+<span class="nc" id="L27">        assertEquals(TriangleType.ISOSCELES_TRIANGLE, TriangleCheckerOwn.checkTriangle(3, 3, 5));</span>
+<span class="nc" id="L28">        assertEquals(TriangleType.ISOSCELES_TRIANGLE, TriangleCheckerOwn.checkTriangle(4, 4, 6));</span>
+<span class="nc" id="L29">        assertEquals(TriangleType.ISOSCELES_TRIANGLE, TriangleCheckerOwn.checkTriangle(3, 2, 2));</span>
+<span class="nc" id="L30">        assertEquals(TriangleType.ISOSCELES_TRIANGLE, TriangleCheckerOwn.checkTriangle(3, 4, 3));</span>
+<span class="nc" id="L31">        assertEquals(TriangleType.ISOSCELES_TRIANGLE, TriangleCheckerOwn.checkTriangle(4, 4, 3));</span>
+<span class="nc" id="L32">    }</span>
+
+    @Test // gleichseitig
+    public void own_noTriangleTestOwn() {
+<span class="nc" id="L36">        assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(-2, 4, 2));</span>
+<span class="nc" id="L37">        assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(1, 2, 3));</span>
+<span class="nc" id="L38">        assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(0, 0, 2));</span>
+<span class="nc" id="L39">        assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(2, 4, 2));</span>
+<span class="nc" id="L40">        assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(0, 0, 0));</span>
+<span class="nc" id="L41">        assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(0, 2, 0));</span>
+<span class="nc" id="L42">        assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(2, 0, 0));</span>
+<span class="nc" id="L43">    }</span>
+    /*
+        @Test //gleichseitig
+        public void streek_cequilateralTest() {
+            assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleChecker.checkTriangle(1, 1, 1));
+            assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleChecker.checkTriangle(894456684, 894456684, 894456684));
+            assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleChecker.checkTriangle(378710059, 378710059, 378710059));
+            assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleChecker.checkTriangle(594244357, 594244357, 594244357));
+            assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleChecker.checkTriangle(25880563, 25880563, 25880563));
+            assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleChecker.checkTriangle(2147483647, 2147483647, 2147483647));
+        }
+
+        @Test // ungleichseitig
+        public void streek_scaleneTest() {
+            assertEquals(TriangleType.SCALENE_TRIANGLE, TriangleChecker.checkTriangle(4, 7, 5));
+            assertEquals(TriangleType.SCALENE_TRIANGLE, TriangleChecker.checkTriangle(8, 4, 7));
+            assertEquals(TriangleType.SCALENE_TRIANGLE, TriangleChecker.checkTriangle(2, 6, 7));
+        }
+
+        @Test // gleichschenklig
+        public void streek_isocleseTest() {
+            assertEquals(TriangleType.ISOSCELES_TRIANGLE, TriangleChecker.checkTriangle(2, 2, 3));
+            assertEquals(TriangleType.ISOSCELES_TRIANGLE, TriangleChecker.checkTriangle(3, 3, 5));
+            assertEquals(TriangleType.ISOSCELES_TRIANGLE, TriangleChecker.checkTriangle(4, 4, 6));
+            assertEquals(TriangleType.ISOSCELES_TRIANGLE, TriangleChecker.checkTriangle(3, 2, 2));
+            assertEquals(TriangleType.ISOSCELES_TRIANGLE, TriangleChecker.checkTriangle(3, 4, 3));
+        }
+
+
+        //split up for easy checking
+        @Test
+        public void streek_noTriangleTestNegativNumber() {
+            assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(-2, 4, 2));
+        }
+
+        @Test
+        public void streek_noTriangleTestABCEqual() {
+            assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(1, 2, 3));
+        }
+
+        @Test
+        public void streek_noTriangleTestFirstZero() {
+            assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 2, 2));
+        }
+
+        @Test
+        public void streek_noTriangleTestFirstTwoZero() {
+            assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 0, 2));
+        }
+
+        @Test
+        public void streek_noTriangleTestAllZero() {
+            assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 0, 0));
+        }
+
+        @Test
+        public void streek_noTriangleTestFirstLastZero() {
+            assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(0, 2, 0));
+        }
+
+        @Test
+        public void streek_noTriangleTestLastTwoZero() {
+            assertEquals(TriangleType.NO_TRIANGLE, TriangleChecker.checkTriangle(2, 0, 0));
+        }*/
+    @Test //
+    public void paper4Tests_noTriangle() {
+<span class="nc" id="L109">        assertEquals(TriangleType.NO_TRIANGLE, TriangleCheckerOwn.checkTriangle(3, 5, 9));</span>
+<span class="nc" id="L110">    }</span>
+    @Test
+    public void paper4Tests_equilateralTriangle() {
+<span class="nc" id="L113">        assertEquals(TriangleType.EQUILATERAL_TRIANGLE, TriangleCheckerOwn.checkTriangle(8, 8, 8));</span>
+<span class="nc" id="L114">    }</span>
+    @Test
+    public void paper4Tests_isocleseTriangle() {
+<span class="nc" id="L117">        assertEquals(TriangleType.ISOSCELES_TRIANGLE, TriangleCheckerOwn.checkTriangle(8, 8, 9));</span>
+<span class="nc" id="L118">    }</span>
+    @Test
+    public void paper4Tests_scaleneTriangle() {
+<span class="nc" id="L121">        assertEquals(TriangleType.SCALENE_TRIANGLE, TriangleCheckerOwn.checkTriangle(3, 5, 7));</span>
+<span class="nc" id="L122">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
