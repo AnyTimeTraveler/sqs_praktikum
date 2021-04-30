@@ -1,10 +1,14 @@
+package org.hsemden.sqs.aufgabe3;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class TriangleCheckerOwn {
 
+    private TriangleCheckerOwn() {
+    }
 
-    public static TriangleType checkTriangle(int a, int b, int c) {
+    public static TriangleTypeOwn checkTriangle(int a, int b, int c) {
         //used to sort a,b,c
         ArrayList<Integer> numbers = new ArrayList<>(3);
         numbers.add(a);
@@ -21,13 +25,13 @@ public class TriangleCheckerOwn {
         //a+b>c even if a+b > max Integer
         if ((long) a + (long) b > (long) c) {
             if (a == b && b == c) {
-                return TriangleType.EQUILATERAL_TRIANGLE; // gleichseitig
+                return TriangleTypeOwn.EQUILATERAL_TRIANGLE; // gleichseitig
             } else if (a == b || b == c || a == c) {
-                return TriangleType.ISOSCELES_TRIANGLE; // gleichschenklig
+                return TriangleTypeOwn.ISOSCELES_TRIANGLE; // gleichschenklig
             } else {
-                return TriangleType.SCALENE_TRIANGLE; // ungleichseitig
+                return TriangleTypeOwn.SCALENE_TRIANGLE; // ungleichseitig
             }
         }
-        return TriangleType.NO_TRIANGLE;
+        return TriangleTypeOwn.NO_TRIANGLE;
     }
 }
